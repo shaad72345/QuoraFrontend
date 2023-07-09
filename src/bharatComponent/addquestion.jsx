@@ -35,7 +35,7 @@ const navi = useNavigate();
            body : JSON.stringify(payload)
          }).then((res)=>res.json())
          .then((res)=>{setUploadMsg(res.message);toast(res.message) })
-         .catch((err)=>{console.log(err);toast(res.message)})
+         .catch((err)=>{toast(err.message)})
          navi("/answer")
         //  titlebox ="" 
         onClose();
