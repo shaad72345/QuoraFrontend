@@ -12,6 +12,9 @@ function CustomProviderComp({children}) {
    const [Name, setName] = useState("");
    const [allpost, setAllpost] = useState([]);
    const [mypost, setmypost] = useState([]);
+   const [Signupmsg, setSignupmsg] = useState("");
+   const [Signuperr, setSignuperr] = useState("");
+   
   //  const login = ()=>{
   //   setLogin(true);
   //  }
@@ -22,7 +25,7 @@ function CustomProviderComp({children}) {
 //     setWelcome(true);
 //    }                                    //////////, login
   return (
-   <myContext.Provider value = {{isLogin,setLogin, setName, Name,logout,allpost,setAllpost, mypost, setmypost,pageNo, setPageNo}}>
+   <myContext.Provider value = {{isLogin,setLogin, setName, Name,logout,allpost,setAllpost, mypost, setmypost,pageNo, setPageNo,Signupmsg, setSignupmsg,Signuperr, setSignuperr}}>
     {children}
    </myContext.Provider>
   )

@@ -12,15 +12,17 @@ import { provider } from "./FireBaseAuth";
 import { AuthContext } from "../commonStore/contextapi";
 import { myContext } from "../CustomProviderComp";
 import { ToastContainer, toast } from 'react-toastify';
+import { Text } from "@chakra-ui/react";
 
 
 export function LoginLandingPage() {
-  let {isLogin,setLogin, setName, Name,logout}  = useContext(myContext);
+  let {isLogin,setLogin, setName, Name,logout,Signupmsg,Signuperr}  = useContext(myContext);
   const [errMsg, setErrMsg] = useState("");
   const [user, setUser] = useState({ email: "", password: "" });
   const navigate = useNavigate();
   const { postuser, setinputdata, postdata, inputdata, setIsAuth } = useContext(AuthContext);
 
+ 
 
 function handleAlreadySignin(){
   var token = localStorage.getItem("Quora_token");
@@ -107,7 +109,11 @@ handleAlreadySignin();
           </Center>
           <div className="TagLine">
             <p>A place to share knowledge and better understand the world</p>
-          </div>
+          </div> 
+          {Signupmsg? 
+          <div ><Center><Text color="green" fontSize='xl' fontWeight='bold' >{Signupmsg}</Text></Center></div> : null }
+          {Signuperr? 
+          <div style={{marginLeft:"75px"}}><Center><Text color="red" fontSize='m' fontWeight='bold' >{Signuperr}</Text></Center></div> : null }
           <br />
           <div className="LRContainer">
             <div className="LeftDiv">

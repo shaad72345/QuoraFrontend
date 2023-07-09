@@ -18,16 +18,20 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "./FireBaseAuth";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-
+import { useContext } from "react";
+import { myContext } from "../CustomProviderComp";
 function SignUpComp() {
+  
   const [Error, setError] = useState("");
-  const [msg, setMsg] = useState("");
+ 
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {setSignupmsg,setSignuperr} = useContext(myContext);
   const [credentail, setCredential] = useState({
     name: "",
     email: "",
     password: "",
   });
+
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
   function handleSignup() {
@@ -37,9 +41,9 @@ function SignUpComp() {
       return;
     }
     setError("");
-    console.log(credentail);
+    // console.log(credentail);
     setCredential({ name: "", email: "", password: "" });
-     onClose();
+    
 
 
     fetch("https://quoraclonebackend.onrender.com/user/signup", {
@@ -47,8 +51,8 @@ function SignUpComp() {
           headers : {'Content-Type':'application/json' },
           body : JSON.stringify(credentail)
         }).then((res)=>res.json())
-        .then((res)=>{console.log(res);setMsg(res.message);  toast(res.messages);})
-        .catch((err)=>console.log(err))
+        .then((res)=>{console.log(res);setSignupmsg(res.message); setSignuperr(res.error) ; toast(res.messages); onClose();})
+        .catch((err)=>setSignuperr(err.message))
 
     // createUserWithEmailAndPassword(auth, credentail.email, credentail.password)
     //   .then(async (res) => {
@@ -73,10 +77,11 @@ function SignUpComp() {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Create your account</ModalHeader>
+         <ModalHeader>Create your account</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-          {/* {msg? <h1 style={{color:"green"}}>{msg}</h1>:null} */}
+         
+
             <FormControl>
               <FormLabel>Full name</FormLabel>
             
