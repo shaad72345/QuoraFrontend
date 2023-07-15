@@ -10,7 +10,7 @@ const Message = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return <>
-        <Box bottom={'0'} bg={'white'} right={'10px'} position={'fixed'} w={'245px'} h={'36.5px'} border={'1px solid silver'} onClick={onOpen}>
+        <Box bottom={'0'} bg={'white'} right={'5px'} position={'fixed'} w={'25%'} h={'36.5px'} border={'1px solid silver'} onClick={onOpen}>
             <Flex py={'6px'}>
                 <Box px={'10px'} ><Text fontSize='sm'> Messages</Text> </Box>
                 <Spacer />
@@ -20,7 +20,7 @@ const Message = () => {
         </Box>
         <Drawer placement={'bottom'} onClose={onClose} isOpen={isOpen}>
             <DrawerOverlay />
-            <DrawerContent align={'center'} width='322px' ml='78.5%' h={'410px'}>
+            <DrawerContent align={'center'} width='322px' ml={{base:"24%",lg:'77%'}} h={'410px'}>
             <Flex py={'7px'} boxShadow='md' >
                 <Box px={'10px'}  onClick={onClose}>Messages </Box>
                 <Spacer onClick={onClose}/>

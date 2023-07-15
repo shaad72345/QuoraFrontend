@@ -327,8 +327,7 @@ const Navbar = () => {
                     {/* <Link to='/home'><Image mr='20px'  maxWidth='90px' minWidth='90px' src={quora} /></Link> */}
                     {/* <Spacer /> */}
                     <Link to='/home'><Image maxWidth='30px' minWidth='30px'  mr='10px' src={home} /></Link>
-                    <Spacer />
-                    <Link ><Image maxWidth='30px' color={'red'} minWidth='30px' mr='10px'  src={following} /></Link>
+                
                     <Spacer />
                     <Link to='/answer'><Image maxWidth='30px' minWidth='30px' mr='10px' src={answer} /></Link>
                     <Spacer />
