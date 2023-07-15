@@ -21,12 +21,15 @@ function Myposts() {
 
        useEffect(()=>{getmyposts()},[])
   return (
-    <div className="homepage" style={{width:'40%', margin:"auto", paddingTop:"45px"}}>
+    
+    <div className="homepage" style={{ margin:"auto", paddingTop:"45px",width:"100%",marginTop:"15px"}}>
+      <Box w={{base:'100%', md:"50%"}} margin='auto'>
 {mypost.length<1 ? <Box margin="120px"> <Text fontSize="xl" fontWeight="bold" > No post yet!! </Text> </Box>: null}
 
 {  mypost.map(function(elem){
         return <MypostCard props = {elem} />
      })}
+     </Box>
     </div>
   )
 }

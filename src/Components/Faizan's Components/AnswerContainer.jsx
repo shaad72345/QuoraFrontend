@@ -38,7 +38,7 @@ function AnswerContainer({prop}) {
     }
 
 }
-console.log("shaad")
+// console.log("shaad")
 
     return (
 

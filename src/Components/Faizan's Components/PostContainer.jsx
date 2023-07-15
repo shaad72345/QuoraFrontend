@@ -92,7 +92,7 @@ const handleAddComment = ()=>{
             {/* {postdata?.map((elem) => { */}
                 <>
                     {/* <h1>{elem.des}</h1> */}
-                    <Box bg="white" mt="1rem" mb="2rem" border="0.1px solid lightgray">
+                    <Box bg="white" mt="1rem" mb="1rem" border="0.1px solid lightgray">
                 <Box display="flex" gap="0.5rem" alignItems="center" p="0.6rem 0.5rem">
                     <Box>
                         <Image

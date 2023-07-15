@@ -16,7 +16,7 @@ function MypostCard({props}) {
    const{Name,isLogin} = useContext(myContext);
   
   
- console.log(props)
+//  console.log(props)
 
  function getRelativeTime(timestamp, hours = 24) {
     const now = moment();
@@ -51,7 +51,7 @@ return function(){
             {/* {postdata?.map((elem) => { */}
                 <>
                     {/* <h1>{elem.des}</h1> */}
-                    <Box bg="white" mt="1rem" mb="2rem" border="0.1px solid lightgray">
+                    <Box bg="white" mt="1rem" mb="1rem" border="0.1px solid lightgray">
                 <Box display="flex" gap="0.5rem" alignItems="center" p="0.6rem 0.5rem">
                     <Box>
                         <Image

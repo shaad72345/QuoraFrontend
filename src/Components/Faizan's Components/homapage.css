@@ -52,14 +52,14 @@
 .homepage-container{
     display: flex;
     /* border: 1px solid red; */
-    width: 70%;
+    width: 80%;
     margin: auto;
     margin-top: 1rem;
     position: relative;
 }
 
 .homepage{
-    width: 55%;
+    width: 60%;
     /* border: 1px solid green; */
     padding: 0 1rem;
     /* margin: auto; */

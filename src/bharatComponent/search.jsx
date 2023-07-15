@@ -7,14 +7,14 @@ function SearchBox() {
     return (
         <>
 
-            <InputGroup onClick={onOpen} size='sm' w='320px'>
+            <InputGroup onClick={onOpen} size='sm' w='320px' marginRight='10px'>
                 <InputLeftElement
                     pointerEvents="none"
                     color='gray'
                     fontSize='0.9em'
                     children={<SearchIcon />}
                 />
-                <Input borderRadius='1px' size='sm' placeholder='Search Quora' w='320px' />
+                <Input borderRadius='20px' size='sm' placeholder='Search Quora' w={{base:'250px', md:'320px'}} />
             </InputGroup>
 
             <Modal onClose={onClose} isOpen={isOpen} >
