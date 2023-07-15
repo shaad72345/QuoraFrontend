@@ -66,7 +66,7 @@ function SignUpComp() {
   }
   return (
     <>
-      <Button onClick={onOpen} padding={5} ml={14} colorScheme="blue">
+      <Button onClick={onOpen} padding={5} ml={{base:"0", md:"14"}} colorScheme="blue" width={{base:"95%", md:"60%"}}>
         Sign Up With Email
       </Button>
       <Modal

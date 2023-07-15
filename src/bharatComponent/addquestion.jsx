@@ -12,10 +12,12 @@ import axios from 'axios';
 import { myContext } from '../CustomProviderComp';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { Center } from '@chakra-ui/react';
 const Addquestion = () => {
     const {isLogin,allpost, setAllpost} = useContext(myContext);
   const [post, setPost] = useState({Title:"", description:""})
   const [uploadMsg, setUploadMsg] = useState("");
+  const [errMsg, setErrMsg] = useState("");
   const [Post_Image, setImage] = useState("")
 const navi = useNavigate();
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -26,6 +28,7 @@ const navi = useNavigate();
         const {Title, description} = post;
         // console.log(Post_Image);
        const payload = {Title,Post_Image, description}
+       if(Title && description) {
          fetch("https://quoraclonebackend.onrender.com/posts/create", {
            method:"POST",
            headers : {
@@ -36,9 +39,14 @@ const navi = useNavigate();
          }).then((res)=>res.json())
          .then((res)=>{setUploadMsg(res.message);toast(res.message) })
          .catch((err)=>{toast(err.message)})
+         setErrMsg("")
          navi("/answer")
         //  titlebox ="" 
         onClose();
+       }
+       else{
+        setErrMsg("Please Add Question and Description both")
+       }
 
     }
     const convertToBase64 = (e)=>{
@@ -63,15 +71,17 @@ const navi = useNavigate();
             <Image color='white' w='20px' src={downarrow}   />
         </Button>
 
-        <Modal isOpen={isOpen} blockScrollOnMount={false} size='3xl' isCentered onClose={onClose}>
+        <Modal isOpen={isOpen} blockScrollOnMount={false} size={{base:"lg", md:"3xl"}}   isCentered={true} onClose={onClose}>
             <ModalOverlay />
-            <ModalContent h='420px' p='10px' color='gray'>
+            <ModalContent h='420px' width='95%' p='10px' color='gray'>
                 <CloseButton size='lg' onClick={onClose} />
                 <HStack pb='10px'>
                     <Text w='50%' color='blackAlpha.800' textAlign='center'>Add Question</Text>
                     <Text w='50%' color='blackAlpha.800' textAlign='center'>Create Post</Text>
                 </HStack>
                 <hr />
+                <Center>
+                {errMsg ?  <Text color='red'>{errMsg}</Text> :null} </Center>
                 <HStack py='20px' px='10px'>
                     <Image mr='10px' w='25px' src='https://cdn-icons-png.flaticon.com/512/149/149071.png' />
                     <Image w='15px' src={rightfillarrow} />

@@ -52,26 +52,30 @@ function Hompage(props) {
          
         }}
       >
-        <div style={{ width: "80%", position: "fixed" }}>
-          <Box
-            display={{
+         <Box display={{
               base: "none",
               md: "none",
               lg: "inline-flex",
-            }}
-          >
+            }}>
+        <div style={{ width: "80%", position: "fixed" ,marginTop:"10px"}}>
+         
+            
+        
             <Sidebar />
-          </Box>
+        
         </div>
-          <Box className="homepage"  width={{
-              base: "300%",
-              md: "200%",
-              lg: "55%",
+          </Box>
+          <Box   width={{
+              base: "100%",
+              md: "100%",
+              lg: "60%",
             }} marginLeft={{ base: "0px",
             md: "0px",
           lg:"9rem"
-            }} >
-        {/* <div > */}
+            }}  marginTop={'-10px'}
+            padding={{base:"3px", md:"0 1rem"}}
+            >
+      
           <AddPost />
           <Spacer />
           {allpost.map(function (elem) {

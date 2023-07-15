@@ -20,7 +20,7 @@ function AddPost(props) {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
-        <Box border="0.1px solid lightgray" marginTop={{base:"20px"}} maxW="100%" bg="white" borderRadius="4px" >
+        <Box border="0.1px solid lightgray" marginTop={{base:"40px", md:'20px'}} maxW="100%" bg="white" borderRadius="4px" >
            
             <Box display="flex" gap="1rem" p="0.5rem">
                 <Image 
@@ -33,12 +33,12 @@ function AddPost(props) {
                 <Button bg="rgb(241,242,242)" 
                 border="0.4px solid lightgray"
                 borderRadius="2rem"
-                p="0 18rem 0 1.8rem"
+                
                 color="grey"
                  size="sm"
                 onClick={onOpen}
-                padding="10px 150px 10px 10px"
-                width="500px"
+                // padding="10px 150px 10px 10px"
+                width="85%"
                
                 >
                 What do you want to ask or share?

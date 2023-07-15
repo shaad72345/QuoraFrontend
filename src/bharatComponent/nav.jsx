@@ -67,8 +67,8 @@ const Navbar = () => {
 
     return <>
         <Box py='0px' border={'0.5px solid #E0E0E0'} bg={'white'} top={'0'} position={'fixed'}  w={'100%'} zIndex='1'>
-            <Box w={{base:'100%', md:'72%'}} m='auto'>
-                <Flex align='center' className='hello' display={{base:'none', md:'inline-flex'}}>
+            <Box w={{base:'100%', md:'100%'}} margin={'auto'} textAlign={'center'}   >
+                <Flex align='center' className='hello' display={{base:'none', md:'inline-flex'}} padding={'0px 10px'}>
                     <Link to='/home'><Image mr='20px'  maxWidth='90px' minWidth='90px' src={quora} /></Link>
                     <Spacer />
                     <Link to='/home'><Image maxWidth='30px' minWidth='30px'  mr='10px' src={home} /></Link>
@@ -203,7 +203,7 @@ const Navbar = () => {
 
                 </Flex>
                 {/* ---------------------------------- */}
-                <Flex align='center' className='hello' width='100%' backgroundColor='#b92b27' display={{base:'inline-flex', md:'none'}} margin='auto'>
+                <Flex align='center' className='hello' width='100%' backgroundColor='#b92b27' display={{base:'inline-flex', md:'none'}} margin='auto' padding={'0px 10px'}>
                     <Link to='/home'><Image mr='20px'  maxWidth='90px' minWidth='90px' src={Qlogo} /></Link>
                     <Spacer />
                     {/* <Link to='/home'><Image maxWidth='30px' minWidth='30px'  mr='10px' src={home} /></Link>
@@ -322,7 +322,7 @@ const Navbar = () => {
 
                 {/* -------------------------------- */}
                
-                <Flex align='center' width='100%' className='hello' display={{base:'inline-flex', md:'none'}}  justifyContent='space-around' margin='auto' paddingLeft='7px'>
+                <Flex align='center' width='100%' className='hello' display={{base:'inline-flex', md:'none'}}  justifyContent='space-around' margin='auto' padding={'3px 10px'}>
                    
                     {/* <Link to='/home'><Image mr='20px'  maxWidth='90px' minWidth='90px' src={quora} /></Link> */}
                     {/* <Spacer /> */}

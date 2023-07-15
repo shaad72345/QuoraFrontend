@@ -98,7 +98,7 @@ handleAlreadySignin();
   return (
     <div style={{paddingTop:'20px'}} className="loginbody">
       <Center>
-        <Box className="LoginContainer" mt="2">
+        <Box className="LoginContainer" mt="2" display={{base:"none",md:'block'}}>
           <Center>
             <div className="IconDiv">
               <img
@@ -251,6 +251,110 @@ handleAlreadySignin();
           </div>
           <ToastContainer />
         </Box>
+
+        {/*=======================================*/}
+        <Box backgroundColor='white' mt="2" margin='auto' padding='20px' display={{base:"block",md:'none'}} width={{base:'93%'}} boxShadow={"rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;"}>
+          <Center m>
+            <div className="IconDiv" >
+              <img
+                src="https://assets.entrepreneur.com/content/3x2/2000/20190211224126-quora-logo-crop.jpeg?format=pjeg&auto=webp&crop=16:9&width=675&height=380"
+                alt=""
+              />
+            </div>
+          </Center>
+         
+          <div className="TagLine">
+            <p>A place to share knowledge and better understand the world</p>
+          </div> 
+          {Signupmsg? 
+          <div ><Center><Text color="green" fontSize='xl' fontWeight='bold' >{Signupmsg}</Text></Center></div> : null }
+          {Signuperr? 
+          <div style={{marginLeft:"75px"}}><Center><Text color="red" fontSize='m' fontWeight='bold' >{Signuperr}</Text></Center></div> : null }
+          <br />
+         
+           
+            <div >
+              <div className="LoginText">
+                <p>Login</p>
+              </div>
+
+              <div style={{margin:"auto", width:"100%", alignItems:"center"}}  >
+                <p>Email</p>
+                <Input
+                width={'100%'}
+                  borderRadius="2"
+                  variant="outline"
+                  placeholder="Your Email"
+                  type="email"
+                  value={user.email}
+                  onChange={(e) => {
+                    setUser({ ...user, email: e.target.value });
+                    
+                  }}
+                />
+              </div>
+              <br />
+              <div >
+                <p>Password</p>
+                <Input
+                  borderRadius="2"
+                  variant="outline"
+                  placeholder="Your Password"
+                  type="password"
+                  value={user.password}
+                  onChange={(e) => {
+                    setUser({ ...user, password: e.target.value });
+                  }}
+                />
+              </div>
+
+              <p
+                style={{
+                  fontSize: "small",
+                  marginTop: "12px",
+                  marginBottom: "-15px",
+                  textAlign: "left",
+                  color: "red",
+                }}
+              >
+                {errMsg}
+              </p>
+
+              <div className="LoginButton">
+                <div>
+                  <p>Forget Password?</p>
+                </div>
+                <div>
+                  <Button
+                    borderRadius="20"
+                    colorScheme="messenger"
+                    onClick={handleSignIn}
+                  >
+                    Login
+                  </Button>
+                </div>
+              </div>
+            
+            </div>
+    
+
+          <br /> 
+          
+          <hr className="HrColor" />
+         <Box margin='auto' textAlign={'center'}>
+          <Text>Don't have account ? Create new account</Text> <br />
+          <SignUpComp />
+          </Box>
+          <br />
+          <hr className="HrColor" />
+          <div >
+            <p style={{paddingBottom:'10px', margin:"auto" , textAlign:"center"}}>
+              हिन्दी
+            </p>
+          </div>
+          <ToastContainer />
+        </Box>
+        {/* ====================================== */}
       </Center>
     </div>
   );

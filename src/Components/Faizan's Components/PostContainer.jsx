@@ -153,12 +153,14 @@ const handleAddComment = ()=>{
                 <hr />
                { showComments &&
                  (<Box p="5px">
-                    <Input placeholder='Comment...' w="70%" borderRadius="40px" marginLeft='7px' onChange={(e)=>{setAddComment(e.target.value)}}/> &nbsp;
-                    <Button colorScheme='blue'p='5px 10px' fontSize="15px" borderRadius="40px"  mb='7px' onClick={handleAddComment}>Add Comment</Button>
+                    <Center>
+                    <Input placeholder='Comment...' w="78%" borderRadius="40px" marginLeft='7px' onChange={(e)=>{setAddComment(e.target.value)}}/> &nbsp;
+                    <Button colorScheme='blue'p='5px 5px' width='17%' fontSize="13px" borderRadius="40px"  mb='0px' onClick={handleAddComment}>Add Comment</Button>
+                    </Center>
                     <br />
                      <Text fontSize="l" as="b" pl="10px">{NoOfComment} Comments</Text> <br /> <br />
                   {allComments.map(function(elem){
-        return  <Box p="5px" m='-20px 0px -35px 0px'> <AnswerContainer prop = {elem} /> </Box>
+        return   <AnswerContainer prop = {elem} /> 
         })  }
 
              </Box>  ) }
