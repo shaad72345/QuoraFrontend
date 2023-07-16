@@ -322,7 +322,7 @@ const Navbar = () => {
 
                 {/* -------------------------------- */}
                
-                <Flex align='center' width='100%' className='hello' display={{base:'inline-flex', md:'none'}}  justifyContent='space-around' margin='auto' padding={'3px 10px'}>
+                <Flex align='center' width='100%' className='hello' display={{base:'inline-flex', md:'none'}}  justifyContent='space-around' margin='auto' padding={'3px 13px'}>
                    
                     {/* <Link to='/home'><Image mr='20px'  maxWidth='90px' minWidth='90px' src={quora} /></Link> */}
                     {/* <Spacer /> */}
